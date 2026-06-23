@@ -1,0 +1,19 @@
+{
+  "document_id": "DOC_00042",
+  "template_id": "JNTUH_CERT_V2",
+  "image_path": "data/samples/DOC_00042_page_1.png",
+  "image_width": 1200,
+  "image_height": 1600,
+  "annotations": [
+    {
+      "field_name": "student_name",
+      "label_class": "OPEN_VARIABLE",
+      "text": "A. Ravi Kumar",
+      "bbox": [241, 318, 468, 351],
+      "document_id": "DOC_00042",
+      "template_id": "JNTUH_CERT_V2",
+      "annotator_id": "ann_01",
+      "review_status": "verified"
+    }
+  ]
+}

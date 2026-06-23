@@ -1,0 +1,14 @@
+{
+  "version": "degree_lookup_v1",
+  "values": [
+    "Bachelor of Technology",
+    "Bachelor of Engineering",
+    "Master of Technology",
+    "Master of Engineering",
+    "Bachelor of Pharmacy",
+    "Master of Pharmacy",
+    "Master of Business Administration",
+    "Master of Computer Applications",
+    "Doctor of Philosophy"
+  ]
+}

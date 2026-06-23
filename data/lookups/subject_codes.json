@@ -1,0 +1,13 @@
+{
+  "version": "subject_code_lookup_v1",
+  "values": [
+    "CS501PC",
+    "CS502PC",
+    "CS503PC",
+    "CS504PC",
+    "CS505PC",
+    "EC501PC",
+    "ME501PC",
+    "CE501PC"
+  ]
+}

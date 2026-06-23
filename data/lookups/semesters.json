@@ -1,0 +1,21 @@
+{
+  "version": "semester_lookup_v1",
+  "values": [
+    "Semester I",
+    "Semester II",
+    "Semester III",
+    "Semester IV",
+    "Semester V",
+    "Semester VI",
+    "Semester VII",
+    "Semester VIII",
+    "First Semester",
+    "Second Semester",
+    "Third Semester",
+    "Fourth Semester",
+    "Fifth Semester",
+    "Sixth Semester",
+    "Seventh Semester",
+    "Eighth Semester"
+  ]
+}
