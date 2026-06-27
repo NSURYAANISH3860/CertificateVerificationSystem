@@ -1,9 +1,15 @@
 from __future__ import annotations
 
 import json
+import sys
 import tempfile
 import time
 from pathlib import Path
+
+# Add the project root to python path to resolve imports on Streamlit Cloud
+root_dir = Path(__file__).parent.parent.parent.resolve()
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
 
 import cv2
 import numpy as np
