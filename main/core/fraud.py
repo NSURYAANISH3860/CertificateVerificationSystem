@@ -54,7 +54,7 @@ def verify_certificate(
     height, width = img_gray.shape
 
     # 1. Extract and Verify Year from OCR
-    detected_year = extract_year_from_ocr(boxes)
+    detected_year = extract_year_from_ocr(boxes, claimed_year=claimed_year)
     if detected_year:
         year_status = (detected_year == claimed_year)
         detailed_checks["year_match"] = FraudCheckDetail(
@@ -261,7 +261,7 @@ def verify_certificate(
     )
 
 
-def extract_year_from_ocr(boxes: list[OcrBox]) -> int | None:
+def extract_year_from_ocr(boxes: list[OcrBox], claimed_year: int | None = None) -> int | None:
     """
     Search for four-digit years in the certificate text and return the one
     associated with degree completion or award.
@@ -275,13 +275,25 @@ def extract_year_from_ocr(boxes: list[OcrBox]) -> int | None:
         if match:
             year = int(match.group(1))
             if 1980 <= year <= 2026:
-                # Calculate a confidence score for the year based on adjacent keywords
                 score = 1
                 lower_txt = text.lower()
-                keywords = ["passed", "held in", "convocation", "award", "date", "year", "completion", "examination"]
-                for kw in keywords:
+                
+                # Highly relevant passing/academic keywords
+                academic_kws = ["passed", "held in", "convocation", "award", "completion", "examination", "ssc", "inter", "diploma"]
+                for kw in academic_kws:
                     if kw in lower_txt:
-                        score += 3
+                        score += 5
+                        
+                # Date of birth or other non-academic date indicator keywords
+                dob_kws = ["birth", "dob", "born", "issue"]
+                for kw in dob_kws:
+                    if kw in lower_txt:
+                        score -= 3
+                        
+                # Tie-breaker: if it matches the claimed year, give it a small boost
+                if claimed_year and year == claimed_year:
+                    score += 2
+                    
                 candidates.append((year, score))
 
     if not candidates:
