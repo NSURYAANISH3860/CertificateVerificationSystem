@@ -74,7 +74,7 @@ def download_ppstructure(lang: str = "en") -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Download/cache OCR and layout models used by P1.")
+    parser = argparse.ArgumentParser(description="Download/cache OCR and layout models used by CVS.")
     parser.add_argument("--skip-paddleocr", action="store_true")
     parser.add_argument("--layoutlmv3", action="store_true", help="Download LayoutLMv3 base for later token/layout fine-tuning.")
     parser.add_argument("--ppstructure", action="store_true", help="Download PaddleOCR PP-Structure table models.")

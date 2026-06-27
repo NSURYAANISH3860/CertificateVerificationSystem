@@ -1,1 +1,1 @@
-"""Streamlit interface for P1."""
+"""Streamlit interface for CVS."""

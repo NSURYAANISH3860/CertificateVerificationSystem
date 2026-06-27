@@ -1,2 +1,2 @@
-"""Reusable document intelligence core for P1."""
+"""Reusable document intelligence core for CVS."""
 

@@ -83,7 +83,7 @@ def _load_pdf_pages_with_pdftoppm(path: Path, dpi: int) -> list[PageImage]:
             "PDF rendering requires either pdf2image+Poppler or a pdftoppm executable on PATH."
         )
 
-    with tempfile.TemporaryDirectory(prefix="p1_pdf_") as tmp:
+    with tempfile.TemporaryDirectory(prefix="cvs_pdf_") as tmp:
         prefix = Path(tmp) / "page"
         subprocess.run(
             [pdftoppm, "-png", "-r", str(dpi), str(path), str(prefix)],

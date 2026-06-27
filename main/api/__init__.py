@@ -1,1 +1,1 @@
-"""FastAPI app for P1."""
+"""FastAPI app for CVS."""

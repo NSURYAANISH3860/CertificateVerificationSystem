@@ -12,7 +12,7 @@ from main.core.calibration import train_calibration_model
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Train P1 confidence calibration from human review outcomes.")
+    parser = argparse.ArgumentParser(description="Train CVS confidence calibration from human review outcomes.")
     parser.add_argument("--review-csv", type=Path, required=True)
     parser.add_argument("--output", type=Path, default=Path("models/calibration/logistic.pkl"))
     parser.add_argument("--method", choices=["logistic", "isotonic"], default="logistic")

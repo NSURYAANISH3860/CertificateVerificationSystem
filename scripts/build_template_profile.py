@@ -19,7 +19,7 @@ from main.core.settings import TEMPLATE_DIR, ensure_runtime_dirs
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build a P1 template repetition profile from reference documents.")
+    parser = argparse.ArgumentParser(description="Build a CVS template repetition profile from reference documents.")
     parser.add_argument("files", nargs="+", type=Path)
     parser.add_argument("--template-id", required=True)
     parser.add_argument("--ocr-engine", choices=["auto", "paddleocr", "tesseract"], default="auto")

@@ -39,9 +39,9 @@ ID_TO_LABEL = {idx: label for label, idx in LABEL_TO_ID.items()}
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Fine-tune LayoutLMv3 token classifier from P1 annotations.")
+    parser = argparse.ArgumentParser(description="Fine-tune LayoutLMv3 token classifier from CVS annotations.")
     parser.add_argument("--annotations", type=Path, required=True, help="JSONL file with image_path and annotations per document/page.")
-    parser.add_argument("--output-dir", type=Path, default=Path("models/layoutlmv3-p1"))
+    parser.add_argument("--output-dir", type=Path, default=Path("models/layoutlmv3-cvs"))
     parser.add_argument("--epochs", type=float, default=5)
     parser.add_argument("--batch-size", type=int, default=2)
     parser.add_argument("--model-name", default="microsoft/layoutlmv3-base")

@@ -222,7 +222,7 @@ with tabs[0]:
         st.subheader("Verification Outcomes")
         if uploaded:
             suffix = Path(uploaded.name).suffix
-            with tempfile.NamedTemporaryFile(delete=False, suffix=suffix, prefix="p1_ui_") as tmp:
+            with tempfile.NamedTemporaryFile(delete=False, suffix=suffix, prefix="cvs_ui_") as tmp:
                 tmp.write(uploaded.read())
                 tmp_path = Path(tmp.name)
 
@@ -354,7 +354,7 @@ with tabs[1]:
             
             for idx, file in enumerate(batch_files):
                 suffix = Path(file.name).suffix
-                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix, prefix="p1_batch_") as tmp:
+                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix, prefix="cvs_batch_") as tmp:
                     tmp.write(file.read())
                     tmp_path = Path(tmp.name)
                 

@@ -174,7 +174,7 @@ class VerificationReport(BaseModel):
 
 class ExtractionOutput(BaseModel):
     schema_version: str = "1.0"
-    project: str = "P1_FIELD_EXTRACTION"
+    project: str = "CVS_FIELD_EXTRACTION"
     document_id: str
     institution: str
     document_type: DocumentType

@@ -18,4 +18,4 @@ def test_output_schema_version_is_present() -> None:
     )
     payload = output.model_dump(mode="json")
     assert payload["schema_version"] == "1.0"
-    assert payload["project"] == "P1_FIELD_EXTRACTION"
+    assert payload["project"] == "CVS_FIELD_EXTRACTION"

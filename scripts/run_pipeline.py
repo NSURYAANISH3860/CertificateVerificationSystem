@@ -13,7 +13,7 @@ from main.core.schemas import DocumentType
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run P1 extraction on one document.")
+    parser = argparse.ArgumentParser(description="Run CVS extraction on one document.")
     parser.add_argument("file", type=Path)
     parser.add_argument("--document-type", choices=[item.value for item in DocumentType], default=DocumentType.UNKNOWN.value)
     parser.add_argument("--institution", default="JNTUH")

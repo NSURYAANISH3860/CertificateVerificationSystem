@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "p1-academic-field-extraction"
+name = "cvs-academic-field-extraction"
 version = "0.1.0"
 description = "Academic document field classification and extraction MVP for CONSTANT, CONTROLLED_VARIABLE, and OPEN_VARIABLE detection."
 readme = "README.md"

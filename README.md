@@ -1,6 +1,6 @@
-# P1 Academic Document Field Extraction
+# CVS Academic Document Field Extraction
 
-P1 is a privacy-aware academic document extraction MVP for classifying OCR/layout content into:
+CVS is a privacy-aware academic document extraction MVP for classifying OCR/layout content into:
 
 - `CONSTANT`
 - `CONTROLLED_VARIABLE`
@@ -72,7 +72,7 @@ Then post to `POST /extract` with a `file`, `document_type`, `institution`, opti
 ## Run From CLI
 
 ```powershell
-python scripts/run_pipeline.py p1-1.pdf --document-type degree_certificate --ocr-engine tesseract
+python scripts/run_pipeline.py rules.pdf --document-type degree_certificate --ocr-engine tesseract
 ```
 
 Output JSON is written under `outputs/`.
@@ -101,7 +101,7 @@ Use `data/annotation_schema.example.json` as the per-page JSONL shape for later 
 After the dataset is supplied:
 
 ```powershell
-python scripts/train_layoutlmv3.py --annotations data/annotations.jsonl --output-dir models/layoutlmv3-p1
+python scripts/train_layoutlmv3.py --annotations data/annotations.jsonl --output-dir models/layoutlmv3-cvs
 ```
 
 Labels include BIO versions of `CONSTANT`, `CONTROLLED_VARIABLE`, `OPEN_VARIABLE`, `TABLE_HEADER`, `TABLE_CELL`, `SEAL`, `SIGNATURE`, and `LOGO`.
