@@ -52,7 +52,7 @@ pdf = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["p1*"]
+include = ["main*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

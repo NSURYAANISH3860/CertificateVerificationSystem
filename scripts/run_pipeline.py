@@ -8,8 +8,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from p1.core.pipeline import process_document, save_extraction
-from p1.core.schemas import DocumentType
+from main.core.pipeline import process_document, save_extraction
+from main.core.schemas import DocumentType
 
 
 def main() -> None:

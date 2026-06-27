@@ -58,13 +58,13 @@ python scripts/download_models.py --layoutlmv3 --trocr
 ## Run The Interface
 
 ```powershell
-streamlit run p1/ui/app.py
+streamlit run main/ui/app.py
 ```
 
 ## Run The API
 
 ```powershell
-uvicorn p1.api.main:app --reload --port 8000
+uvicorn main.api.main:app --reload --port 8000
 ```
 
 Then post to `POST /extract` with a `file`, `document_type`, `institution`, optional `template_id`, and `ocr_engine`.

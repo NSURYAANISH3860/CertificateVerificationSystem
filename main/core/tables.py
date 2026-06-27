@@ -8,10 +8,10 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 
-from p1.core.baseline import group_boxes_into_lines, mean
-from p1.core.io import merge_bboxes
-from p1.core.schemas import ExtractedTable, OcrBox, TableCell
-from p1.core.vocabulary import SUBJECT_CODE_RE
+from main.core.baseline import group_boxes_into_lines, mean
+from main.core.io import merge_bboxes
+from main.core.schemas import ExtractedTable, OcrBox, TableCell
+from main.core.vocabulary import SUBJECT_CODE_RE
 
 
 GRADE_RE = re.compile(r"\b(?:O|A\+|A|B\+|B|C|D|E|F|P|S)\b")

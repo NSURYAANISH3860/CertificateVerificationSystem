@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from p1.core.calibration import train_calibration_model
+from main.core.calibration import train_calibration_model
 
 
 def main() -> None:

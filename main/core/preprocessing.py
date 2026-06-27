@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 from PIL import Image
 
-from p1.core.schemas import QualityReport
+from main.core.schemas import QualityReport
 
 
 @dataclass(slots=True)

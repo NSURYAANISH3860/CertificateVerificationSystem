@@ -8,8 +8,8 @@ from typing import Iterable
 
 from rapidfuzz import fuzz
 
-from p1.core.io import merge_bboxes
-from p1.core.schemas import (
+from main.core.io import merge_bboxes
+from main.core.schemas import (
     ClassifiedRegion,
     ConfidenceComponents,
     ExtractedField,
@@ -17,8 +17,8 @@ from p1.core.schemas import (
     OcrBox,
     QualityReport,
 )
-from p1.core.settings import DEFAULT_REVIEW_THRESHOLD
-from p1.core.vocabulary import CGPA_RE, DATE_RE, HALL_TICKET_RE, ControlledMatch, ControlledVocabulary, MARK_RE
+from main.core.settings import DEFAULT_REVIEW_THRESHOLD
+from main.core.vocabulary import CGPA_RE, DATE_RE, HALL_TICKET_RE, ControlledMatch, ControlledVocabulary, MARK_RE
 
 
 @dataclass(slots=True)

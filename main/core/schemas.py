@@ -34,6 +34,20 @@ class ReviewStatus(str, Enum):
     NEEDS_CORRECTION = "needs_correction"
 
 
+class VerificationStatus(str, Enum):
+    VALID = "VALID"
+    FLAGGED = "FLAGGED"
+    HUMAN_REVIEW = "HUMAN_REVIEW"
+
+
+class TemplateVersion(str, Enum):
+    V1 = "V1"  # 2014-2016
+    V2 = "V2"  # 2017-2019
+    V3 = "V3"  # 2020-2022
+    V4 = "V4"  # 2023-2025
+    UNKNOWN = "UNKNOWN"
+
+
 class BBoxModel(BaseModel):
     x0: float
     y0: float
@@ -140,6 +154,24 @@ class ExtractedTable(BaseModel):
     extraction_method: str = "ocr_line_grouping"
 
 
+class FraudCheckDetail(BaseModel):
+    name: str
+    status: bool  # True if passed (no fraud detected), False if failed
+    value: str | None = None
+    description: str
+
+
+class VerificationReport(BaseModel):
+    status: VerificationStatus
+    risk_score: float = Field(ge=0.0, le=1.0)
+    reasons: list[str] = Field(default_factory=list)
+    claimed_year: int
+    detected_year: int | None = None
+    predicted_template_version: TemplateVersion
+    template_match_confidence: float = Field(default=0.0, ge=0.0, le=1.0)
+    detailed_checks: dict[str, FraudCheckDetail] = Field(default_factory=dict)
+
+
 class ExtractionOutput(BaseModel):
     schema_version: str = "1.0"
     project: str = "P1_FIELD_EXTRACTION"
@@ -156,6 +188,7 @@ class ExtractionOutput(BaseModel):
     ocr_engine: str
     warnings: list[str] = Field(default_factory=list)
     audit: dict[str, Any] = Field(default_factory=dict)
+    verification: VerificationReport | None = None
 
 
 class AnnotationObject(BaseModel):

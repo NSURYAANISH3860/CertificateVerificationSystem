@@ -6,9 +6,9 @@ from pathlib import Path
 from fastapi import FastAPI, File, Form, UploadFile
 from fastapi.responses import JSONResponse
 
-from p1.core.pipeline import process_document
-from p1.core.schemas import DocumentType
-from p1.core.settings import DEFAULT_INSTITUTION
+from main.core.pipeline import process_document
+from main.core.schemas import DocumentType
+from main.core.settings import DEFAULT_INSTITUTION
 
 app = FastAPI(title="P1 Academic Field Extraction", version="0.1.0")
 
@@ -37,6 +37,30 @@ async def extract(
             institution=institution,
             template_id=template_id or None,
             ocr_engine=ocr_engine,
+        )
+        return JSONResponse(output.model_dump(mode="json"))
+    finally:
+        tmp_path.unlink(missing_ok=True)
+
+
+@app.post("/verify")
+async def verify(
+    file: UploadFile = File(...),
+    claimed_year: int = Form(...),
+    institution: str = Form(DEFAULT_INSTITUTION),
+    ocr_engine: str = Form("auto"),
+) -> JSONResponse:
+    suffix = Path(file.filename or "upload").suffix or ".bin"
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix, prefix="p1_verify_") as tmp:
+        tmp.write(await file.read())
+        tmp_path = Path(tmp.name)
+    try:
+        output = process_document(
+            tmp_path,
+            document_type=DocumentType.DEGREE_CERTIFICATE,
+            institution=institution,
+            ocr_engine=ocr_engine,
+            claimed_year=claimed_year,
         )
         return JSONResponse(output.model_dump(mode="json"))
     finally:

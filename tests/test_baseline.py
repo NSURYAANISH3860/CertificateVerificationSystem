@@ -1,6 +1,6 @@
-from p1.core.baseline import extract_fields
-from p1.core.schemas import OcrBox, QualityReport
-from p1.core.vocabulary import ControlledVocabulary
+from main.core.baseline import extract_fields
+from main.core.schemas import OcrBox, QualityReport
+from main.core.vocabulary import ControlledVocabulary
 
 
 def test_extracts_controlled_degree_and_open_cgpa() -> None:

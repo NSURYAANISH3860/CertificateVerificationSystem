@@ -8,7 +8,7 @@ from pathlib import Path
 
 from PIL import Image, ImageOps, ImageSequence
 
-from p1.core.settings import SUPPORTED_DOCUMENT_SUFFIXES, SUPPORTED_IMAGE_SUFFIXES
+from main.core.settings import SUPPORTED_DOCUMENT_SUFFIXES, SUPPORTED_IMAGE_SUFFIXES
 
 
 @dataclass(slots=True)
@@ -49,15 +49,31 @@ def _load_image_pages(path: Path) -> list[PageImage]:
 
 def _load_pdf_pages(path: Path, dpi: int) -> list[PageImage]:
     try:
-        from pdf2image import convert_from_path
+        import fitz
+        import io
+        
+        doc = fitz.open(str(path))
+        pages: list[PageImage] = []
+        for idx in range(len(doc)):
+            page = doc.load_page(idx)
+            zoom = dpi / 72.0
+            mat = fitz.Matrix(zoom, zoom)
+            pix = page.get_pixmap(matrix=mat)
+            img_data = pix.tobytes("png")
+            img = Image.open(io.BytesIO(img_data)).convert("RGB")
+            pages.append(PageImage(page_number=idx + 1, image=img.copy(), source_path=path))
+        return pages
+    except Exception as exc:
+        try:
+            from pdf2image import convert_from_path
 
-        images = convert_from_path(str(path), dpi=dpi)
-        return [
-            PageImage(page_number=idx, image=image.convert("RGB"), source_path=path)
-            for idx, image in enumerate(images, start=1)
-        ]
-    except Exception:
-        return _load_pdf_pages_with_pdftoppm(path, dpi=dpi)
+            images = convert_from_path(str(path), dpi=dpi)
+            return [
+                PageImage(page_number=idx, image=image.convert("RGB"), source_path=path)
+                for idx, image in enumerate(images, start=1)
+            ]
+        except Exception:
+            return _load_pdf_pages_with_pdftoppm(path, dpi=dpi)
 
 
 def _load_pdf_pages_with_pdftoppm(path: Path, dpi: int) -> list[PageImage]:

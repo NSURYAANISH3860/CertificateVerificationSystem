@@ -10,12 +10,12 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from p1.core.baseline import build_template_profile
-from p1.core.io import load_document_images
-from p1.core.ocr import get_ocr_engine
-from p1.core.pipeline import make_document_id
-from p1.core.preprocessing import preprocess_page
-from p1.core.settings import TEMPLATE_DIR, ensure_runtime_dirs
+from main.core.baseline import build_template_profile
+from main.core.io import load_document_images
+from main.core.ocr import get_ocr_engine
+from main.core.pipeline import make_document_id
+from main.core.preprocessing import preprocess_page
+from main.core.settings import TEMPLATE_DIR, ensure_runtime_dirs
 
 
 def main() -> None:

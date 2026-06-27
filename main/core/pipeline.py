@@ -5,14 +5,14 @@ import json
 from pathlib import Path
 from typing import Any
 
-from p1.core.baseline import TemplateCluster, classify_regions, extract_fields
-from p1.core.io import load_document_images
-from p1.core.ocr import get_ocr_engine
-from p1.core.preprocessing import preprocess_page
-from p1.core.schemas import DocumentType, ExtractionOutput, OcrBox, QualityReport
-from p1.core.settings import DEFAULT_INSTITUTION, DEFAULT_OCR_ENGINE, OUTPUT_DIR, ensure_runtime_dirs
-from p1.core.tables import extract_marksheet_tables, extract_marksheet_tables_with_ppstructure
-from p1.core.vocabulary import ControlledVocabulary
+from main.core.baseline import TemplateCluster, classify_regions, extract_fields
+from main.core.io import load_document_images
+from main.core.ocr import get_ocr_engine
+from main.core.preprocessing import preprocess_page
+from main.core.schemas import DocumentType, ExtractionOutput, OcrBox, QualityReport
+from main.core.settings import DEFAULT_INSTITUTION, DEFAULT_OCR_ENGINE, OUTPUT_DIR, ensure_runtime_dirs
+from main.core.tables import extract_marksheet_tables, extract_marksheet_tables_with_ppstructure
+from main.core.vocabulary import ControlledVocabulary
 
 
 def process_document(
@@ -24,6 +24,7 @@ def process_document(
     ocr_engine: str = DEFAULT_OCR_ENGINE,
     ocr_lang: str = "eng",
     save: bool = True,
+    claimed_year: int | None = None,
 ) -> ExtractionOutput:
     ensure_runtime_dirs()
     path = Path(file_path).expanduser().resolve()
@@ -67,6 +68,17 @@ def process_document(
         if not tables:
             tables = extract_marksheet_tables(all_boxes)
 
+    verification_report = None
+    if claimed_year is not None and preprocessed_pages:
+        from main.core.fraud import verify_certificate
+        verification_report = verify_certificate(
+            image=preprocessed_pages[0][1],
+            boxes=all_boxes,
+            fields=fields,
+            claimed_year=claimed_year,
+            institution=institution,
+        )
+
     output = ExtractionOutput(
         document_id=document_id,
         institution=institution,
@@ -86,6 +98,7 @@ def process_document(
             "table_count": len(tables),
             "template_profile_used": bool(template_profile),
         },
+        verification=verification_report,
     )
     if save:
         save_extraction(output)

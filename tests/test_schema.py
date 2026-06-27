@@ -1,4 +1,4 @@
-from p1.core.schemas import DocumentType, ExtractionOutput, QualityReport
+from main.core.schemas import DocumentType, ExtractionOutput, QualityReport
 
 
 def test_output_schema_version_is_present() -> None:

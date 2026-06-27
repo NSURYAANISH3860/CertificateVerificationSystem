@@ -7,7 +7,7 @@ from pathlib import Path
 
 from rapidfuzz import fuzz, process
 
-from p1.core.settings import LOOKUP_DIR
+from main.core.settings import LOOKUP_DIR
 
 
 @dataclass(frozen=True, slots=True)
