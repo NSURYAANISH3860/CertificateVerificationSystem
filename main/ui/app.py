@@ -113,6 +113,11 @@ with st.sidebar:
     st.markdown("### ⚙️ Engine Configurations")
     ocr_engine = st.selectbox("OCR Engine Select", ["auto", "paddleocr", "tesseract", "mock"], index=0)
     institution = st.text_input("Institution Identifier", value=DEFAULT_INSTITUTION)
+    document_type = st.selectbox(
+        "Document Type Select",
+        ["degree_certificate", "ssc_certificate", "inter_certificate", "marksheet"],
+        index=0
+    )
     
     st.divider()
     st.markdown("### 🔍 Verification Rules")
@@ -233,7 +238,7 @@ with tabs[0]:
                     # Process document
                     output = process_document(
                         tmp_path,
-                        document_type=DocumentType.DEGREE_CERTIFICATE,
+                        document_type=DocumentType(document_type),
                         institution=institution,
                         ocr_engine=ocr_engine,
                         claimed_year=int(claimed_year),
@@ -363,7 +368,7 @@ with tabs[1]:
                 try:
                     out = process_document(
                         tmp_path,
-                        document_type=DocumentType.DEGREE_CERTIFICATE,
+                        document_type=DocumentType(document_type),
                         institution=institution,
                         ocr_engine=ocr_engine,
                         claimed_year=int(batch_year),

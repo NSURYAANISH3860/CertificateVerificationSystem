@@ -28,10 +28,10 @@ def process_document(
 ) -> ExtractionOutput:
     ensure_runtime_dirs()
     path = Path(file_path).expanduser().resolve()
+    doc_type = document_type if isinstance(document_type, DocumentType) else DocumentType(document_type)
     if not template_id and claimed_year:
         clean_inst = "".join(c if c.isalnum() else "_" for c in institution)
-        template_id = f"{clean_inst}_{claimed_year}".upper()
-    doc_type = document_type if isinstance(document_type, DocumentType) else DocumentType(document_type)
+        template_id = f"{clean_inst}_{doc_type.value}_{claimed_year}".upper()
     document_id = make_document_id(path)
     engine = get_ocr_engine(ocr_engine, lang=ocr_lang)
     vocabulary = ControlledVocabulary()

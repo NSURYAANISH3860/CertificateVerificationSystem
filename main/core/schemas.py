@@ -9,6 +9,8 @@ from pydantic import BaseModel, Field, field_validator
 
 class DocumentType(str, Enum):
     DEGREE_CERTIFICATE = "degree_certificate"
+    SSC_CERTIFICATE = "ssc_certificate"
+    INTER_CERTIFICATE = "inter_certificate"
     MARKSHEET = "marksheet"
     UNKNOWN = "unknown"
 
