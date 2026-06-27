@@ -41,6 +41,7 @@ class VerificationStatus(str, Enum):
 
 
 class TemplateVersion(str, Enum):
+    V0 = "V0"  # 1980-2013
     V1 = "V1"  # 2014-2016
     V2 = "V2"  # 2017-2019
     V3 = "V3"  # 2020-2022

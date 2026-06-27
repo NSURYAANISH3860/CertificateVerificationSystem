@@ -36,6 +36,7 @@ def verify_certificate(
     fields: dict[str, ExtractedField],
     claimed_year: int,
     institution: str = "JNTUH",
+    doc_path: Path | None = None,
 ) -> VerificationReport:
     """
     Main verification pipeline that performs year checks, template matching,
@@ -177,6 +178,43 @@ def verify_certificate(
         reasons.append("SERIAL_NUMBER_FORMAT_INVALID")
         risk_score += 0.2
 
+    # 8. Metadata and digital signatures scanner
+    meta_ok, meta_desc = check_pdf_metadata_forensics(doc_path, image)
+    detailed_checks["metadata_forensics"] = FraudCheckDetail(
+        name="Digital Metadata Scan",
+        status=meta_ok,
+        value="Clean metadata" if meta_ok else "Software trace detected",
+        description=meta_desc,
+    )
+    if not meta_ok:
+        reasons.append("EDIT_SOFTWARE_DETECTED")
+        risk_score += 0.35
+
+    # 9. Error Level Analysis (ELA) check
+    ela_ok, ela_desc = check_ela_anomaly(image, fields)
+    detailed_checks["ela_forensics"] = FraudCheckDetail(
+        name="Error Level Analysis (ELA)",
+        status=ela_ok,
+        value="Consistent compression" if ela_ok else "Anomalous compression",
+        description=ela_desc,
+    )
+    if not ela_ok:
+        reasons.append("ELA_ANOMALY")
+        risk_score += 0.3
+
+    # 10. JNTUH Cohort Verification
+    if institution == "JNTUH":
+        cohort_ok, cohort_desc = check_hall_ticket_year_consistency(fields, claimed_year)
+        detailed_checks["hall_ticket_correlation"] = FraudCheckDetail(
+            name="Hall Ticket Cohort Check",
+            status=cohort_ok,
+            value="Valid cohort correlation" if cohort_ok else "Cohort year anomaly",
+            description=cohort_desc,
+        )
+        if not cohort_ok:
+            reasons.append("COHORT_YEAR_MISMATCH")
+            risk_score += 0.40
+
     # Final decision routing
     risk_score = min(1.0, max(0.0, risk_score))
     if risk_score >= 0.6:
@@ -203,7 +241,7 @@ def extract_year_from_ocr(boxes: list[OcrBox]) -> int | None:
     Search for four-digit years in the certificate text and return the one
     associated with degree completion or award.
     """
-    year_re = re.compile(r"\b(20\d{2})\b")
+    year_re = re.compile(r"\b((?:19|20)\d{2})\b")
     candidates: list[tuple[int, int]] = []  # (year, score)
 
     for box in boxes:
@@ -211,7 +249,7 @@ def extract_year_from_ocr(boxes: list[OcrBox]) -> int | None:
         match = year_re.search(text)
         if match:
             year = int(match.group(1))
-            if 2010 <= year <= 2026:
+            if 1980 <= year <= 2026:
                 # Calculate a confidence score for the year based on adjacent keywords
                 score = 1
                 lower_txt = text.lower()
@@ -347,6 +385,12 @@ def classify_template_version(
 
     scores = {}
 
+    # Score V0: 1980-2013 (No QR, classic layouts)
+    v0_score = 0.0
+    if not has_qr:
+        v0_score += 0.4
+    scores[TemplateVersion.V0] = v0_score
+
     # Score V1: 2014-2016 (No QR, Seal bottom-left y > 0.7, x < 0.4)
     v1_score = 0.0
     if not has_qr:
@@ -385,7 +429,9 @@ def classify_template_version(
     
     # If no landmarks are detected, default to year-based classification but with low confidence
     if best_score < 0.4:
-        if 2014 <= claimed_year <= 2016:
+        if 1980 <= claimed_year <= 2013:
+            return TemplateVersion.V0, 0.3
+        elif 2014 <= claimed_year <= 2016:
             return TemplateVersion.V1, 0.3
         elif 2017 <= claimed_year <= 2019:
             return TemplateVersion.V2, 0.3
@@ -399,6 +445,8 @@ def classify_template_version(
 
 
 def is_year_in_template_range(year: int, version: TemplateVersion) -> bool:
+    if version == TemplateVersion.V0:
+        return 1980 <= year <= 2013
     if version == TemplateVersion.V1:
         return 2014 <= year <= 2016
     if version == TemplateVersion.V2:
@@ -612,3 +660,143 @@ def check_serial_number_format(
         return False, f"Value '{val}' does not match the expected pattern for {version.value}."
 
     return True, f"Serial number format matches {version.value} template specification."
+
+
+def check_pdf_metadata_forensics(doc_path: Path | None, image: Image.Image) -> tuple[bool, str]:
+    """
+    Scans document metadata or binary structure to detect editing software signatures.
+    If doc_path is a PDF, scans its binary content for tool signatures.
+    If it is an image, inspects PIL Image metadata tags.
+    """
+    editing_tools = [
+        "photoshop", "illustrator", "canva", "acrobat pro", "nitro pdf", 
+        "pdfescape", "inkscape", "gimp", "coreldraw", "indesign"
+    ]
+    
+    # 1. Check Image EXIF/Metadata
+    img_info = image.info or {}
+    for key, val in img_info.items():
+        if isinstance(val, str):
+            val_lower = val.lower()
+            for tool in editing_tools:
+                if tool in val_lower:
+                    return False, f"Image metadata indicates editing tool: {tool.title()} (field '{key}')."
+                    
+    # 2. Check PDF binary signatures
+    if doc_path and doc_path.exists():
+        if doc_path.suffix.lower() == ".pdf":
+            try:
+                file_size = doc_path.stat().st_size
+                with open(doc_path, "rb") as f:
+                    if file_size <= 32768:
+                        content = f.read().lower()
+                    else:
+                        start_chunk = f.read(16384)
+                        f.seek(file_size - 16384)
+                        end_chunk = f.read(16384)
+                        content = start_chunk + end_chunk
+                
+                content_str = content.decode("ascii", errors="ignore")
+                
+                found_tools = []
+                for tool in editing_tools:
+                    if tool in content_str:
+                        found_tools.append(tool.title())
+                
+                if found_tools:
+                    return False, f"PDF binary metadata indicates editing software: {', '.join(found_tools)}."
+            except Exception as e:
+                logger.warning(f"Error scanning PDF metadata: {e}")
+                
+    return True, "No digital editing signatures found in metadata."
+
+
+def check_ela_anomaly(image: Image.Image, fields: dict[str, ExtractedField]) -> tuple[bool, str]:
+    """
+    Error Level Analysis (ELA) check.
+    Saves the image as a JPEG at 90% quality, computes the difference, and checks
+    if local variables have anomalous compression noise variances compared to a baseline.
+    """
+    from PIL import ImageChops
+    import tempfile
+    
+    img_rgb = image.convert("RGB")
+    width, height = img_rgb.size
+    
+    with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmp:
+        tmp_name = Path(tmp.name)
+    try:
+        img_rgb.save(tmp_name, "JPEG", quality=90)
+        compressed = Image.open(tmp_name)
+        ela_diff = ImageChops.difference(img_rgb, compressed)
+        ela_diff.load()
+    finally:
+        tmp_name.unlink(missing_ok=True)
+        
+    ela_gray = np.array(ela_diff.convert("L"))
+    global_mean = float(np.mean(ela_gray))
+    global_std = float(np.std(ela_gray))
+    
+    anomalous_fields = []
+    
+    for var_name in ["student_name", "cgpa", "hall_ticket_number"]:
+        field = fields.get(var_name)
+        if not field or not field.value:
+            continue
+            
+        bbox = field.bbox
+        x0, y0, x1, y1 = int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3])
+        x0, y0 = max(0, x0 - 3), max(0, y0 - 3)
+        x1, y1 = min(width, x1 + 3), min(height, y1 + 3)
+        
+        if x1 - x0 < 5 or y1 - y0 < 3:
+            continue
+            
+        crop_ela = ela_gray[y0:y1, x0:x1]
+        crop_mean = float(np.mean(crop_ela))
+        crop_std = float(np.std(crop_ela))
+        
+        if crop_std < 1.0:
+            anomalous_fields.append(f"{var_name} (zero ELA noise, std={crop_std:.2f})")
+        elif crop_mean > max(8.0, global_mean * 3.5):
+            anomalous_fields.append(f"{var_name} (high ELA activity, mean={crop_mean:.1f} vs global={global_mean:.1f})")
+            
+    if anomalous_fields:
+        return False, f"ELA compression anomaly detected in: {', '.join(anomalous_fields)}."
+        
+    return True, "Error Level Analysis (ELA) suggests consistent compression across variables."
+
+
+def check_hall_ticket_year_consistency(fields: dict[str, ExtractedField], claimed_year: int) -> tuple[bool, str]:
+    """
+    Correlates JNTUH Hall Ticket / Registration number format with graduation year.
+    First 2 digits represent the year of admission (e.g. '18' for 2018).
+    Admission year must be consistent with graduation/claimed year (typically graduation is 3-6 years after admission).
+    """
+    ht_field = fields.get("hall_ticket_number") or fields.get("serial_number")
+    if not ht_field or not ht_field.value:
+        return True, "No hall ticket / registration number extracted to validate."
+        
+    val = ht_field.value.strip()
+    match = re.match(r"^(\d{2})", val)
+    if not match:
+        return True, "Hall ticket format does not start with a 2-digit admission cohort year."
+        
+    yy = int(match.group(1))
+    
+    if claimed_year >= 2000:
+        if yy > 70:  # Admitted in 19xx
+            admission_year = 1900 + yy
+        else:
+            admission_year = 2000 + yy
+    else:
+        admission_year = 1900 + yy
+        
+    min_grad = admission_year + 2
+    max_grad = admission_year + 7
+    
+    if not (min_grad <= claimed_year <= max_grad):
+        return False, f"Cohort anomaly: Hall ticket '{val}' implies admission in {admission_year}, which is inconsistent with graduation in {claimed_year}."
+        
+    return True, f"Hall ticket year {admission_year} matches graduation cohort {claimed_year}."
+

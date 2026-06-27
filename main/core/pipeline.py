@@ -77,6 +77,7 @@ def process_document(
             fields=fields,
             claimed_year=claimed_year,
             institution=institution,
+            doc_path=path,
         )
 
     output = ExtractionOutput(

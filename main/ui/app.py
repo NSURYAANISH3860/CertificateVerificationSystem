@@ -213,7 +213,7 @@ with tabs[0]:
         st.subheader("Document Ingestion")
         uploaded = st.file_uploader("Upload scanned certificate or transcript (PDF, JPG, PNG, TIF)", type=["pdf", "png", "jpg", "jpeg", "tif", "tiff", "bmp", "webp"], key="single_uploader")
         
-        claimed_year = st.number_input("Claimed graduation year", min_value=2014, max_value=2026, value=2024, step=1, key="single_year")
+        claimed_year = st.number_input("Claimed graduation year", min_value=1980, max_value=2026, value=2024, step=1, key="single_year")
         
         if uploaded:
             st.info(f"Loaded file: {uploaded.name} ({uploaded.size / (1024*1024):.2f} MB)")
@@ -345,7 +345,7 @@ with tabs[1]:
     st.caption("Drop multiple certificate files to run rapid batch validation rules.")
     
     batch_files = st.file_uploader("Upload batch files", type=["pdf", "png", "jpg", "jpeg", "tif", "tiff", "bmp", "webp"], accept_multiple_files=True, key="batch_uploader")
-    batch_year = st.number_input("Common claimed graduation year", min_value=2014, max_value=2026, value=2024, step=1, key="batch_year")
+    batch_year = st.number_input("Common claimed graduation year", min_value=1980, max_value=2026, value=2024, step=1, key="batch_year")
     
     if batch_files:
         if st.button("Execute Batch Analysis"):
@@ -404,6 +404,7 @@ with tabs[2]:
         """
         | Template Version | Graduation Years | QR Code Location | Seal / Stamp Location | Signature Position |
         | --- | --- | --- | --- | --- |
+        | **V0** | 1980 - 2013 | None | Variable / Historical | Bottom-Right (y: 0.8, x: 0.8) |
         | **V1** | 2014 - 2016 | None | Bottom-Left (y: 0.8, x: 0.1) | Bottom-Right (y: 0.8, x: 0.8) |
         | **V2** | 2017 - 2019 | None | Middle-Left (y: 0.5, x: 0.1) | Bottom-Right (y: 0.8, x: 0.8) |
         | **V3** | 2020 - 2022 | Top-Right (y: 0.1, x: 0.85) | Bottom-Left (y: 0.8, x: 0.1) | Bottom-Right (y: 0.8, x: 0.8) |

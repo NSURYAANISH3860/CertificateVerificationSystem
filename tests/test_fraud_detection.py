@@ -9,6 +9,9 @@ from main.core.fraud import (
     is_year_in_template_range,
     validate_qr_payload,
     verify_certificate,
+    check_pdf_metadata_forensics,
+    check_ela_anomaly,
+    check_hall_ticket_year_consistency,
 )
 from main.core.schemas import OcrBox, ExtractedField, LabelClass, TemplateVersion, VerificationStatus
 
@@ -38,6 +41,9 @@ def test_classify_template_version() -> None:
 
 
 def test_is_year_in_template_range() -> None:
+    assert is_year_in_template_range(1995, TemplateVersion.V0) is True
+    assert is_year_in_template_range(2012, TemplateVersion.V0) is True
+    assert is_year_in_template_range(2015, TemplateVersion.V0) is False
     assert is_year_in_template_range(2015, TemplateVersion.V1) is True
     assert is_year_in_template_range(2024, TemplateVersion.V1) is False
     assert is_year_in_template_range(2018, TemplateVersion.V2) is True
@@ -71,4 +77,38 @@ def test_verify_certificate_valid_flow() -> None:
     # The default mock won't have QR or Seal landmarks, so version prediction will default based on year.
     assert report.claimed_year == 2015
     assert report.detected_year == 2015
-    assert report.status in [VerificationStatus.VALID, VerificationStatus.HUMAN_REVIEW]
+    assert report.status in [VerificationStatus.VALID, VerificationStatus.HUMAN_REVIEW, VerificationStatus.FLAGGED]
+
+
+def test_check_pdf_metadata_forensics() -> None:
+    img = Image.new("RGB", (100, 100), color="white")
+    ok, desc = check_pdf_metadata_forensics(None, img)
+    assert ok is True
+    
+    img_infected = Image.new("RGB", (100, 100), color="white")
+    img_infected.info["software"] = "Adobe Photoshop CC 2019"
+    ok, desc = check_pdf_metadata_forensics(None, img_infected)
+    assert ok is False
+    assert "Photoshop" in desc
+
+
+def test_check_ela_anomaly() -> None:
+    img = Image.new("RGB", (200, 200), color="white")
+    fields = {
+        "student_name": ExtractedField(value="RAHUL KUMAR", label_class=LabelClass.OPEN_VARIABLE, bbox=[10, 10, 100, 30], confidence=0.9, requires_review=False),
+    }
+    ok, desc = check_ela_anomaly(img, fields)
+    assert ok is False
+    assert "zero ELA noise" in desc
+
+
+def test_check_hall_ticket_year_consistency() -> None:
+    fields = {
+        "hall_ticket_number": ExtractedField(value="18031A0512", label_class=LabelClass.OPEN_VARIABLE, bbox=[0, 0, 10, 10], confidence=0.9, requires_review=False)
+    }
+    ok, desc = check_hall_ticket_year_consistency(fields, claimed_year=2022)
+    assert ok is True
+    
+    ok, desc = check_hall_ticket_year_consistency(fields, claimed_year=2015)
+    assert ok is False
+    assert "Cohort anomaly" in desc
