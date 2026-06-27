@@ -112,11 +112,35 @@ st.caption("Advanced multi-dimensional validation platform for credential integr
 with st.sidebar:
     st.markdown("### ⚙️ Engine Configurations")
     ocr_engine = st.selectbox("OCR Engine Select", ["auto", "paddleocr", "tesseract", "mock"], index=0)
-    institution = st.text_input("Institution Identifier", value=DEFAULT_INSTITUTION)
     document_type = st.selectbox(
         "Document Type Select",
-        ["degree_certificate", "ssc_certificate", "inter_certificate", "marksheet"],
+        ["degree_certificate", "ssc_certificate", "inter_certificate", "diploma_certificate", "marksheet"],
         index=0
+    )
+    
+    # Dynamic labels and defaults for 10th/inter/diploma board naming
+    if document_type == "ssc_certificate":
+        inst_label = "Board of Education Name"
+        default_inst = "Board of Secondary Education Telangana"
+        inst_help = "Enter board name, e.g. Board of Secondary Education Telangana"
+    elif document_type == "inter_certificate":
+        inst_label = "Board of Intermediate Education Name"
+        default_inst = "Board of Intermediate Education Telangana"
+        inst_help = "Enter board name, e.g. Board of Intermediate Education Telangana"
+    elif document_type == "diploma_certificate":
+        inst_label = "State Board of Technical Education Name"
+        default_inst = "SBTET Telangana"
+        inst_help = "Enter technical education board, e.g. SBTET Telangana"
+    else:
+        inst_label = "Institution Identifier"
+        default_inst = DEFAULT_INSTITUTION
+        inst_help = "Enter institution identifier, e.g. JNTUH"
+        
+    institution = st.text_input(
+        inst_label,
+        value=default_inst,
+        help=inst_help,
+        key=f"inst_input_{document_type}"
     )
     
     st.divider()

@@ -11,6 +11,7 @@ class DocumentType(str, Enum):
     DEGREE_CERTIFICATE = "degree_certificate"
     SSC_CERTIFICATE = "ssc_certificate"
     INTER_CERTIFICATE = "inter_certificate"
+    DIPLOMA_CERTIFICATE = "diploma_certificate"
     MARKSHEET = "marksheet"
     UNKNOWN = "unknown"
 
