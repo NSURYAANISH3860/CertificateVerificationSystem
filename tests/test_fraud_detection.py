@@ -112,3 +112,35 @@ def test_check_hall_ticket_year_consistency() -> None:
     ok, desc = check_hall_ticket_year_consistency(fields, claimed_year=2015)
     assert ok is False
     assert "Cohort anomaly" in desc
+
+
+def test_verify_certificate_custom_institution_flow() -> None:
+    from main.core.baseline import TemplateCluster
+    img = Image.fromarray(np.ones((800, 600, 3), dtype=np.uint8) * 255)
+    boxes = [
+        OcrBox(document_id="d1", page=1, text="CONSTANT TEXT", bbox=[100, 100, 200, 120], normalized_bbox=[0.16, 0.12, 0.33, 0.15], confidence=0.95, engine="tess"),
+        OcrBox(document_id="d1", page=1, text="2026", bbox=[100, 150, 150, 170], normalized_bbox=[0.16, 0.18, 0.25, 0.21], confidence=0.95, engine="tess"),
+    ]
+    fields = {}
+    
+    # 1. No profile loaded (first document) -> should match successfully (new profile registered)
+    report_no_profile = verify_certificate(img, boxes, fields, claimed_year=2026, institution="ANNA_UNIVERSITY")
+    assert report_no_profile.status in [VerificationStatus.VALID, VerificationStatus.HUMAN_REVIEW, VerificationStatus.FLAGGED]
+    assert report_no_profile.detailed_checks["template_match"].status is True
+    assert "New profile registered" in report_no_profile.detailed_checks["template_match"].value
+    
+    # 2. Profile loaded and matches
+    template_profile = [
+        TemplateCluster(page=1, bucket=(8, 4), repetition_rate=1.0, canonical_text="CONSTANT TEXT", canonical_bbox=[0.16, 0.12, 0.33, 0.15], count=1, total_documents=1)
+    ]
+    report_matching = verify_certificate(img, boxes, fields, claimed_year=2026, institution="ANNA_UNIVERSITY", template_profile=template_profile)
+    assert report_matching.detailed_checks["template_match"].status is True
+    assert "Profile Match: 100.0%" in report_matching.detailed_checks["template_match"].value
+    
+    # 3. Profile loaded and mismatches
+    bad_boxes = [
+        OcrBox(document_id="d1", page=1, text="DIFFERENT TEXT", bbox=[100, 100, 200, 120], normalized_bbox=[0.16, 0.12, 0.33, 0.15], confidence=0.95, engine="tess"),
+    ]
+    report_mismatch = verify_certificate(img, bad_boxes, fields, claimed_year=2026, institution="ANNA_UNIVERSITY", template_profile=template_profile)
+    assert report_mismatch.detailed_checks["template_match"].status is False
+    assert "Profile Match: 0.0%" in report_mismatch.detailed_checks["template_match"].value

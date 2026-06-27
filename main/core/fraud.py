@@ -18,6 +18,7 @@ from main.core.schemas import (
     VerificationReport,
     VerificationStatus,
 )
+from main.core.baseline import TemplateCluster
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +38,7 @@ def verify_certificate(
     claimed_year: int,
     institution: str = "JNTUH",
     doc_path: Path | None = None,
+    template_profile: list[TemplateCluster] | None = None,
 ) -> VerificationReport:
     """
     Main verification pipeline that performs year checks, template matching,
@@ -78,24 +80,47 @@ def verify_certificate(
     sig_bbox = detect_signature(img_gray)
 
     # 3. Template Version Classification and Alignment Checks
-    predicted_version, template_conf = classify_template_version(
-        claimed_year, qr_data, seal_bbox, sig_bbox
-    )
-
-    # Check template consistency with claimed year
-    template_correct = is_year_in_template_range(claimed_year, predicted_version)
-    detailed_checks["template_match"] = FraudCheckDetail(
-        name="Template Style & Version Match",
-        status=template_correct,
-        value=f"Predicted: {predicted_version.value} (Confidence: {template_conf:.2f})",
-        description="Checks if the visual style, logo, seal, and QR code placement correspond to the claimed year's template version.",
-    )
-    if not template_correct:
-        reasons.append("STYLE_YEAR_MISMATCH")
-        risk_score += 0.35
-    if predicted_version == TemplateVersion.UNKNOWN:
-        reasons.append("UNKNOWN_TEMPLATE")
-        risk_score += 0.2
+    if institution.upper() == "JNTUH":
+        predicted_version, template_conf = classify_template_version(
+            claimed_year, qr_data, seal_bbox, sig_bbox
+        )
+        template_correct = is_year_in_template_range(claimed_year, predicted_version)
+        detailed_checks["template_match"] = FraudCheckDetail(
+            name="Template Style & Version Match",
+            status=template_correct,
+            value=f"Predicted: {predicted_version.value} (Confidence: {template_conf:.2f})",
+            description="Checks if the visual style, logo, seal, and QR code placement correspond to the claimed year's template version.",
+        )
+        if not template_correct:
+            reasons.append("STYLE_YEAR_MISMATCH")
+            risk_score += 0.35
+        if predicted_version == TemplateVersion.UNKNOWN:
+            reasons.append("UNKNOWN_TEMPLATE")
+            risk_score += 0.2
+    else:
+        # Non-JNTUH institution layout alignment check
+        if template_profile:
+            template_conf = calculate_template_match_confidence(boxes, template_profile)
+            template_correct = (template_conf >= 0.75)
+            predicted_version = TemplateVersion.V0 if template_correct else TemplateVersion.UNKNOWN
+            detailed_checks["template_match"] = FraudCheckDetail(
+                name="Template Style & Version Match",
+                status=template_correct,
+                value=f"Profile Match: {template_conf*100:.1f}%",
+                description="Checks if the text layout and constant blocks match the dynamically trained template profile.",
+            )
+            if not template_correct:
+                reasons.append("TEMPLATE_MISMATCH")
+                risk_score += 0.35
+        else:
+            predicted_version = TemplateVersion.V0
+            template_conf = 1.0
+            detailed_checks["template_match"] = FraudCheckDetail(
+                name="Template Style & Version Match",
+                status=True,
+                value="New profile registered",
+                description="This is the first document of this template. Layout saved as a reference for future validation.",
+            )
 
     # 4. QR Code Presence & Payload Validation
     has_qr = (qr_data is not None)
@@ -799,4 +824,30 @@ def check_hall_ticket_year_consistency(fields: dict[str, ExtractedField], claime
         return False, f"Cohort anomaly: Hall ticket '{val}' implies admission in {admission_year}, which is inconsistent with graduation in {claimed_year}."
         
     return True, f"Hall ticket year {admission_year} matches graduation cohort {claimed_year}."
+
+
+def calculate_template_match_confidence(boxes: list[OcrBox], template_profile: list[TemplateCluster]) -> float:
+    """
+    Computes the percentage of constant text clusters in the template profile
+    that are found in the current document boxes at their expected page and grid positions.
+    """
+    if not template_profile:
+        return 1.0
+        
+    from main.core.baseline import position_bucket, normalize_text
+    
+    # Index document boxes by bucket
+    doc_buckets = {}
+    for box in boxes:
+        bucket = position_bucket(box.normalized_bbox)
+        doc_buckets[(box.page, bucket)] = normalize_text(box.text)
+        
+    matched = 0
+    for cluster in template_profile:
+        expected = normalize_text(cluster.canonical_text)
+        actual = doc_buckets.get((cluster.page, cluster.bucket), "")
+        if expected and actual and (expected in actual or actual in expected):
+            matched += 1
+            
+    return float(matched / len(template_profile))
 

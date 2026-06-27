@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from main.core.baseline import TemplateCluster, classify_regions, extract_fields
+from main.core.baseline import TemplateCluster, classify_regions, extract_fields, build_template_profile
 from main.core.io import load_document_images
 from main.core.ocr import get_ocr_engine
 from main.core.preprocessing import preprocess_page
@@ -28,6 +28,9 @@ def process_document(
 ) -> ExtractionOutput:
     ensure_runtime_dirs()
     path = Path(file_path).expanduser().resolve()
+    if not template_id and claimed_year:
+        clean_inst = "".join(c if c.isalnum() else "_" for c in institution)
+        template_id = f"{clean_inst}_{claimed_year}".upper()
     doc_type = document_type if isinstance(document_type, DocumentType) else DocumentType(document_type)
     document_id = make_document_id(path)
     engine = get_ocr_engine(ocr_engine, lang=ocr_lang)
@@ -56,6 +59,11 @@ def process_document(
         all_boxes.extend(boxes)
 
     quality = aggregate_quality(page_qualities)
+    
+    if template_id and all_boxes:
+        save_document_boxes(template_id, document_id, all_boxes)
+        rebuild_template_profile(template_id)
+        
     template_profile = load_template_profile(template_id)
     regions = classify_regions(all_boxes, vocabulary=vocabulary, quality=quality, template_profile=template_profile)
     fields = extract_fields(all_boxes, regions, vocabulary=vocabulary, quality=quality)
@@ -170,3 +178,45 @@ def load_template_profile(template_id: str | None) -> list[Any] | None:
         payload["bucket"] = tuple(payload["bucket"])
         clusters.append(TemplateCluster(**payload))
     return clusters
+
+
+def save_document_boxes(template_id: str, document_id: str, boxes: list[OcrBox]) -> None:
+    from main.core.settings import DATA_DIR
+    template_dir = DATA_DIR / "templates" / template_id
+    template_dir.mkdir(parents=True, exist_ok=True)
+    target = template_dir / f"{document_id}.json"
+    
+    serialized = [box.model_dump(mode="json") for box in boxes]
+    target.write_text(json.dumps(serialized, indent=2), encoding="utf-8")
+
+
+def rebuild_template_profile(template_id: str) -> None:
+    from main.core.settings import DATA_DIR, TEMPLATE_DIR
+    from main.core.baseline import build_template_profile
+    from dataclasses import asdict
+    
+    template_dir = DATA_DIR / "templates" / template_id
+    if not template_dir.exists():
+        return
+        
+    files = list(template_dir.glob("*.json"))
+    if len(files) < 2:
+        return
+        
+    documents = []
+    for file_path in files:
+        try:
+            with file_path.open("r", encoding="utf-8") as fh:
+                raw = json.load(fh)
+            docs_boxes = [OcrBox(**item) for item in raw]
+            documents.append(docs_boxes)
+        except Exception as exc:
+            pass
+            
+    if not documents:
+        return
+        
+    profile = build_template_profile(documents, repetition_threshold=0.85)
+    target = TEMPLATE_DIR / f"{template_id}.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps([asdict(cluster) for cluster in profile], indent=2), encoding="utf-8")
