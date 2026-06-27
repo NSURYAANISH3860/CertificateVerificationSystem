@@ -32,10 +32,22 @@ class TesseractOcrEngine(OcrEngine):
     def run(self, image: Image.Image, *, document_id: str, page_number: int) -> list[OcrBox]:
         import pytesseract
         from pytesseract import Output
+        import cv2
+
+        orig_width, orig_height = image.size
+        scaled = False
+        if orig_width < 3000:
+            image = image.resize((orig_width * 2, orig_height * 2), Image.Resampling.LANCZOS)
+            scaled = True
+
+        # Convert to grayscale and apply mild sharpening to improve character outlines
+        img_np = np.array(image.convert("L"))
+        kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+        sharpened = cv2.filter2D(img_np, -1, kernel)
+        image = Image.fromarray(sharpened)
 
         data = pytesseract.image_to_data(image, output_type=Output.DICT, lang=self.lang)
         boxes: list[OcrBox] = []
-        width, height = image.size
         for idx, text in enumerate(data.get("text", [])):
             clean = (text or "").strip()
             if not clean:
@@ -51,6 +63,11 @@ class TesseractOcrEngine(OcrEngine):
             y = float(data["top"][idx])
             w = float(data["width"][idx])
             h = float(data["height"][idx])
+            if scaled:
+                x /= 2.0
+                y /= 2.0
+                w /= 2.0
+                h /= 2.0
             bbox = [x, y, x + w, y + h]
             boxes.append(
                 OcrBox(
@@ -58,7 +75,7 @@ class TesseractOcrEngine(OcrEngine):
                     page=page_number,
                     text=clean,
                     bbox=bbox,
-                    normalized_bbox=normalized_bbox(bbox, width, height),
+                    normalized_bbox=normalized_bbox(bbox, orig_width, orig_height),
                     confidence=max(0.0, min(1.0, conf / 100.0)),
                     engine=self.name,
                     block_id=_safe_int(data, "block_num", idx),
