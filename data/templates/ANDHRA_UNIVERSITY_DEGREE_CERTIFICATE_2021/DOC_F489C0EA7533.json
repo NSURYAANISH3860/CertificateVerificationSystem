@@ -1,0 +1,596 @@
+[
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "U",
+    "bbox": [
+      380.0,
+      17.0,
+      416.0,
+      45.0
+    ],
+    "normalized_bbox": [
+      0.3958333333333333,
+      0.01328125,
+      0.43333333333333335,
+      0.03515625
+    ],
+    "confidence": 0.8681502938270569,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "N",
+    "bbox": [
+      438.0,
+      13.0,
+      488.0,
+      49.0
+    ],
+    "normalized_bbox": [
+      0.45625,
+      0.01015625,
+      0.5083333333333333,
+      0.03828125
+    ],
+    "confidence": 0.9819523692131042,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "7927.",
+    "bbox": [
+      0.0,
+      38.0,
+      102.0,
+      117.0
+    ],
+    "normalized_bbox": [
+      0.0,
+      0.0296875,
+      0.10625,
+      0.09140625
+    ],
+    "confidence": 0.8097414970397949,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "FACULTY OF SCIENCE",
+    "bbox": [
+      210.0,
+      322.0,
+      674.0,
+      364.0
+    ],
+    "normalized_bbox": [
+      0.21875,
+      0.2515625,
+      0.7020833333333333,
+      0.284375
+    ],
+    "confidence": 0.9478161334991455,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "This is tn certify that",
+    "bbox": [
+      297.0,
+      380.0,
+      588.0,
+      420.0
+    ],
+    "normalized_bbox": [
+      0.309375,
+      0.296875,
+      0.6125,
+      0.328125
+    ],
+    "confidence": 0.8749236464500427,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "CladlupalliotenkaiaLakshmiilarasimhaKeshu",
+    "bbox": [
+      26.0,
+      426.0,
+      851.0,
+      495.0
+    ],
+    "normalized_bbox": [
+      0.027083333333333334,
+      0.3328125,
+      0.8864583333333333,
+      0.38671875
+    ],
+    "confidence": 0.8145700097084045,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "Jeatap has teen duly",
+    "bbox": [
+      31.0,
+      496.0,
+      435.0,
+      552.0
+    ],
+    "normalized_bbox": [
+      0.03229166666666667,
+      0.3875,
+      0.453125,
+      0.43125
+    ],
+    "confidence": 0.7599247694015503,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "admitted to the",
+    "bbox": [
+      450.0,
+      497.0,
+      664.0,
+      531.0
+    ],
+    "normalized_bbox": [
+      0.46875,
+      0.38828125,
+      0.6916666666666667,
+      0.41484375
+    ],
+    "confidence": 0.8882269263267517,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "OP",
+    "bbox": [
+      408.0,
+      548.0,
+      450.0,
+      569.0
+    ],
+    "normalized_bbox": [
+      0.425,
+      0.428125,
+      0.46875,
+      0.44453125
+    ],
+    "confidence": 0.5893747806549072,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "Fience",
+    "bbox": [
+      614.0,
+      549.0,
+      727.0,
+      587.0
+    ],
+    "normalized_bbox": [
+      0.6395833333333333,
+      0.42890625,
+      0.7572916666666667,
+      0.45859375
+    ],
+    "confidence": 0.9162204265594482,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "achelor",
+    "bbox": [
+      428.0,
+      563.0,
+      522.0,
+      585.0
+    ],
+    "normalized_bbox": [
+      0.44583333333333336,
+      0.43984375,
+      0.54375,
+      0.45703125
+    ],
+    "confidence": 0.945134162902832,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "in this",
+    "bbox": [
+      81.0,
+      617.0,
+      168.0,
+      644.0
+    ],
+    "normalized_bbox": [
+      0.084375,
+      0.48203125,
+      0.175,
+      0.503125
+    ],
+    "confidence": 0.9786533117294312,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "the Examination prescriled therefor as hereunder:",
+    "bbox": [
+      78.0,
+      648.0,
+      713.0,
+      689.0
+    ],
+    "normalized_bbox": [
+      0.08125,
+      0.50625,
+      0.7427083333333333,
+      0.53828125
+    ],
+    "confidence": 0.9618095755577087,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "YEAR",
+    "bbox": [
+      78.0,
+      725.0,
+      130.0,
+      745.0
+    ],
+    "normalized_bbox": [
+      0.08125,
+      0.56640625,
+      0.13541666666666666,
+      0.58203125
+    ],
+    "confidence": 0.9976854920387268,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "SUBJECTS",
+    "bbox": [
+      310.0,
+      720.0,
+      410.0,
+      743.0
+    ],
+    "normalized_bbox": [
+      0.3229166666666667,
+      0.5625,
+      0.4270833333333333,
+      0.58046875
+    ],
+    "confidence": 0.9939676523208618,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "CLASS",
+    "bbox": [
+      615.0,
+      719.0,
+      683.0,
+      743.0
+    ],
+    "normalized_bbox": [
+      0.640625,
+      0.56171875,
+      0.7114583333333333,
+      0.58046875
+    ],
+    "confidence": 0.9977611303329468,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "MEDIUM",
+    "bbox": [
+      758.0,
+      717.0,
+      851.0,
+      741.0
+    ],
+    "normalized_bbox": [
+      0.7895833333333333,
+      0.56015625,
+      0.8864583333333333,
+      0.57890625
+    ],
+    "confidence": 0.9965662956237793,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "june1990Part 1-Englisheluguand",
+    "bbox": [
+      20.0,
+      743.0,
+      483.0,
+      788.0
+    ],
+    "normalized_bbox": [
+      0.020833333333333332,
+      0.58046875,
+      0.503125,
+      0.615625
+    ],
+    "confidence": 0.8324156403541565,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "Indian Heritage &Culture and",
+    "bbox": [
+      221.0,
+      780.0,
+      510.0,
+      804.0
+    ],
+    "normalized_bbox": [
+      0.23020833333333332,
+      0.609375,
+      0.53125,
+      0.628125
+    ],
+    "confidence": 0.9683900475502014,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "Science & Civilization",
+    "bbox": [
+      221.0,
+      804.0,
+      416.0,
+      828.0
+    ],
+    "normalized_bbox": [
+      0.23020833333333332,
+      0.628125,
+      0.43333333333333335,
+      0.646875
+    ],
+    "confidence": 0.9611995816230774,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "KecondcEnglish",
+    "bbox": [
+      603.0,
+      816.0,
+      889.0,
+      861.0
+    ],
+    "normalized_bbox": [
+      0.628125,
+      0.6375,
+      0.9260416666666667,
+      0.67265625
+    ],
+    "confidence": 0.8271892666816711,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "y1991Part II-Mathematics Physics and Electronics",
+    "bbox": [
+      38.0,
+      829.0,
+      552.0,
+      865.0
+    ],
+    "normalized_bbox": [
+      0.03958333333333333,
+      0.64765625,
+      0.575,
+      0.67578125
+    ],
+    "confidence": 0.9207489490509033,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "as Optional Subjects",
+    "bbox": [
+      222.0,
+      876.0,
+      402.0,
+      899.0
+    ],
+    "normalized_bbox": [
+      0.23125,
+      0.684375,
+      0.41875,
+      0.70234375
+    ],
+    "confidence": 0.9750745892524719,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "Given under tho scal of tho Univorsity",
+    "bbox": [
+      245.0,
+      948.0,
+      653.0,
+      987.0
+    ],
+    "normalized_bbox": [
+      0.2552083333333333,
+      0.740625,
+      0.6802083333333333,
+      0.77109375
+    ],
+    "confidence": 0.9090504050254822,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "WALTAIR",
+    "bbox": [
+      117.0,
+      1012.0,
+      251.0,
+      1043.0
+    ],
+    "normalized_bbox": [
+      0.121875,
+      0.790625,
+      0.26145833333333335,
+      0.81484375
+    ],
+    "confidence": 0.9984211921691895,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "Thel2Helrucery 1998",
+    "bbox": [
+      53.0,
+      1071.0,
+      338.0,
+      1108.0
+    ],
+    "normalized_bbox": [
+      0.05520833333333333,
+      0.83671875,
+      0.35208333333333336,
+      0.865625
+    ],
+    "confidence": 0.8029336333274841,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_F489C0EA7533",
+    "page": 1,
+    "text": "Controller of Examinations",
+    "bbox": [
+      517.0,
+      1084.0,
+      854.0,
+      1115.0
+    ],
+    "normalized_bbox": [
+      0.5385416666666667,
+      0.846875,
+      0.8895833333333333,
+      0.87109375
+    ],
+    "confidence": 0.9737996459007263,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  }
+]
