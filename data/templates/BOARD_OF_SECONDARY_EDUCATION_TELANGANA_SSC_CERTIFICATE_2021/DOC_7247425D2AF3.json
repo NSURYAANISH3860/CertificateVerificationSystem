@@ -1,0 +1,1806 @@
+[
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "Boarh ot seronbarp Qhucation",
+    "bbox": [
+      457.0,
+      126.0,
+      1329.0,
+      193.0
+    ],
+    "normalized_bbox": [
+      0.251236943375481,
+      0.048970073843762146,
+      0.7306212204507971,
+      0.07500971628449281
+    ],
+    "confidence": 0.7826241254806519,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "TEIANGANA SIATE INDIA",
+    "bbox": [
+      671.0,
+      201.0,
+      1107.0,
+      244.0
+    ],
+    "normalized_bbox": [
+      0.36888400219901046,
+      0.078118927322192,
+      0.6085761407366685,
+      0.0948309366498251
+    ],
+    "confidence": 0.8383133411407471,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "180GAL48A",
+    "bbox": [
+      133.0,
+      249.0,
+      411.0,
+      287.0
+    ],
+    "normalized_bbox": [
+      0.0731170973062122,
+      0.0967741935483871,
+      0.22594832325453545,
+      0.11154294597745822
+    ],
+    "confidence": 0.5733999013900757,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "SECONDARY ACNOOL CERIIFICAT",
+    "bbox": [
+      544.0,
+      456.0,
+      1234.0,
+      496.0
+    ],
+    "normalized_bbox": [
+      0.29906542056074764,
+      0.1772250291488535,
+      0.6783947223749313,
+      0.1927710843373494
+    ],
+    "confidence": 0.8706362843513489,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "REQULARPOIR1/A030A/0RA716TN",
+    "bbox": [
+      628.0,
+      525.0,
+      1134.0,
+      560.0
+    ],
+    "normalized_bbox": [
+      0.3452446399120396,
+      0.20404197434900895,
+      0.6234194612424409,
+      0.21764477263894286
+    ],
+    "confidence": 0.6487824320793152,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "CHRTRDTHAT",
+    "bbox": [
+      160.0,
+      595.0,
+      403.0,
+      630.0
+    ],
+    "normalized_bbox": [
+      0.0879604178119846,
+      0.2312475709288768,
+      0.22155030236393622,
+      0.24485036921881073
+    ],
+    "confidence": 0.5187162756919861,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "NADUPALLI OURYA ANISH!",
+    "bbox": [
+      466.0,
+      592.0,
+      863.0,
+      630.0
+    ],
+    "normalized_bbox": [
+      0.2561847168774052,
+      0.2300816167897396,
+      0.47443650357339195,
+      0.24485036921881073
+    ],
+    "confidence": 0.8735772967338562,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "HNENSNANR",
+    "bbox": [
+      159.0,
+      656.0,
+      382.0,
+      697.0
+    ],
+    "normalized_bbox": [
+      0.08741066520065971,
+      0.2549553050913331,
+      0.21000549752611325,
+      0.2708900116595414
+    ],
+    "confidence": 0.5286829471588135,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "NVLNBPRATAP",
+    "bbox": [
+      460.0,
+      662.0,
+      742.0,
+      697.0
+    ],
+    "normalized_bbox": [
+      0.25288620120945576,
+      0.25728721336960747,
+      0.4079164376030786,
+      0.2708900116595414
+    ],
+    "confidence": 0.9162121415138245,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "MOTHRRNNAN",
+    "bbox": [
+      160.0,
+      726.0,
+      392.0,
+      761.0
+    ],
+    "normalized_bbox": [
+      0.0879604178119846,
+      0.28216090167120095,
+      0.21550302363936227,
+      0.2957636999611349
+    ],
+    "confidence": 0.781536340713501,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "NMONINI",
+    "bbox": [
+      457.0,
+      726.0,
+      614.0,
+      764.0
+    ],
+    "normalized_bbox": [
+      0.251236943375481,
+      0.28216090167120095,
+      0.33754810335349095,
+      0.29692965410027206
+    ],
+    "confidence": 0.900981605052948,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "2121110207",
+    "bbox": [
+      454.0,
+      780.0,
+      677.0,
+      831.0
+    ],
+    "normalized_bbox": [
+      0.24958768554150632,
+      0.3031480761756704,
+      0.3721825178669599,
+      0.3229692965410027
+    ],
+    "confidence": 0.9324036836624146,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": ".N",
+    "bbox": [
+      160.0,
+      796.0,
+      287.0,
+      826.0
+    ],
+    "normalized_bbox": [
+      0.0879604178119846,
+      0.30936649825106877,
+      0.1577789994502474,
+      0.32102603964244075
+    ],
+    "confidence": 0.7845317125320435,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "DATTOFRIRTN",
+    "bbox": [
+      157.0,
+      860.0,
+      376.0,
+      895.0
+    ],
+    "normalized_bbox": [
+      0.0863111599780099,
+      0.33424018655266224,
+      0.20670698185816383,
+      0.3478429848425962
+    ],
+    "confidence": 0.6378292441368103,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ROOAZOOS(TWO ZERO FEBRUARY TWO ZEROEROFIVE)",
+    "bbox": [
+      457.0,
+      852.0,
+      1340.0,
+      893.0
+    ],
+    "normalized_bbox": [
+      0.251236943375481,
+      0.33113097551496307,
+      0.736668499175371,
+      0.3470656820831714
+    ],
+    "confidence": 0.8063536286354065,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "SCH",
+    "bbox": [
+      157.0,
+      927.0,
+      276.0,
+      965.0
+    ],
+    "normalized_bbox": [
+      0.0863111599780099,
+      0.36027982899339295,
+      0.15173172072567345,
+      0.37504858142246406
+    ],
+    "confidence": 0.8155449032783508,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "NARAYANA BONOOL KUKATPALLY,MEDQHALDIGTRIGT",
+    "bbox": [
+      457.0,
+      927.0,
+      1134.0,
+      962.0
+    ],
+    "normalized_bbox": [
+      0.251236943375481,
+      0.36027982899339295,
+      0.6234194612424409,
+      0.37388262728332683
+    ],
+    "confidence": 0.8474780321121216,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "MDM",
+    "bbox": [
+      157.0,
+      992.0,
+      287.0,
+      1029.0
+    ],
+    "normalized_bbox": [
+      0.0863111599780099,
+      0.3855421686746988,
+      0.1577789994502474,
+      0.39992226972405753
+    ],
+    "confidence": 0.7559418678283691,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ENOLION",
+    "bbox": [
+      454.0,
+      986.0,
+      596.0,
+      1030.0
+    ],
+    "normalized_bbox": [
+      0.24958768554150632,
+      0.3832102603964244,
+      0.3276525563496427,
+      0.4003109211037699
+    ],
+    "confidence": 0.7685346007347107,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "HPANAMNAONh MAY0",
+    "bbox": [
+      154.0,
+      1053.0,
+      961.0,
+      1096.0
+    ],
+    "normalized_bbox": [
+      0.08466190214403518,
+      0.40924990283715507,
+      0.5283122594832326,
+      0.4259619121647882
+    ],
+    "confidence": 0.7053318023681641,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "THE CANDIDATE SECURED THE FOLLOWINO ORADE AND GRADE POINTS IN CURRICULAD AREAS",
+    "bbox": [
+      154.0,
+      1099.0,
+      1584.0,
+      1147.0
+    ],
+    "normalized_bbox": [
+      0.08466190214403518,
+      0.42712786630392535,
+      0.8708081363386476,
+      0.4457831325301205
+    ],
+    "confidence": 0.9075564742088318,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "GRADE POINTS",
+    "bbox": [
+      1188.0,
+      1149.0,
+      1408.0,
+      1193.0
+    ],
+    "normalized_bbox": [
+      0.6531061022539857,
+      0.44656043528954525,
+      0.7740516767454645,
+      0.4636610959968908
+    ],
+    "confidence": 0.8903200030326843,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "SUDJECT",
+    "bbox": [
+      390.0,
+      1177.0,
+      528.0,
+      1214.0
+    ],
+    "normalized_bbox": [
+      0.21440351841671249,
+      0.4574426739214924,
+      0.2902693787795492,
+      0.4718227749708511
+    ],
+    "confidence": 0.9362490773200989,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "GRADES",
+    "bbox": [
+      823.0,
+      1174.0,
+      945.0,
+      1211.0
+    ],
+    "normalized_bbox": [
+      0.4524463991203958,
+      0.45627671978235523,
+      0.519516217702034,
+      0.47065682083171395
+    ],
+    "confidence": 0.8033378720283508,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "In Flgures",
+    "bbox": [
+      1004.0,
+      1185.0,
+      1145.0,
+      1222.0
+    ],
+    "normalized_bbox": [
+      0.5519516217702034,
+      0.4605518849591916,
+      0.6294667399670149,
+      0.47493198600855036
+    ],
+    "confidence": 0.7649617791175842,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "InWords",
+    "bbox": [
+      1323.0,
+      1179.0,
+      1452.0,
+      1223.0
+    ],
+    "normalized_bbox": [
+      0.7273227047828478,
+      0.45821997668091724,
+      0.7982407916437603,
+      0.47532063738826275
+    ],
+    "confidence": 0.7303651571273804,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "FIRSTLANGUAGE",
+    "bbox": [
+      154.0,
+      1235.0,
+      404.0,
+      1276.0
+    ],
+    "normalized_bbox": [
+      0.08466190214403518,
+      0.4799844539448115,
+      0.22210005497526114,
+      0.4959191605130198
+    ],
+    "confidence": 0.9228394627571106,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "TELUQU",
+    "bbox": [
+      522.0,
+      1238.0,
+      650.0,
+      1276.0
+    ],
+    "normalized_bbox": [
+      0.2869708631115998,
+      0.4811504080839487,
+      0.35733919736118747,
+      0.4959191605130198
+    ],
+    "confidence": 0.9581500887870789,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "A1",
+    "bbox": [
+      863.0,
+      1236.0,
+      907.0,
+      1270.0
+    ],
+    "normalized_bbox": [
+      0.47443650357339195,
+      0.4803731053245239,
+      0.49862561847168774,
+      0.4935872522347454
+    ],
+    "confidence": 0.9729087352752686,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "10",
+    "bbox": [
+      1042.0,
+      1233.0,
+      1085.0,
+      1270.0
+    ],
+    "normalized_bbox": [
+      0.5728422210005497,
+      0.4792071511853867,
+      0.5964815832875207,
+      0.4935872522347454
+    ],
+    "confidence": 0.994922399520874,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ONG ZERO",
+    "bbox": [
+      1270.0,
+      1233.0,
+      1429.0,
+      1262.0
+    ],
+    "normalized_bbox": [
+      0.6981858163826278,
+      0.4792071511853867,
+      0.7855964815832875,
+      0.49047804119704624
+    ],
+    "confidence": 0.8906290531158447,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "11",
+    "bbox": [
+      441.0,
+      1244.0,
+      479.0,
+      1276.0
+    ],
+    "normalized_bbox": [
+      0.24244090159428258,
+      0.4834823163622231,
+      0.2633315008246289,
+      0.4959191605130198
+    ],
+    "confidence": 0.5313927531242371,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "RNGLISH",
+    "bbox": [
+      547.0,
+      1297.0,
+      674.0,
+      1335.0
+    ],
+    "normalized_bbox": [
+      0.3007146783947224,
+      0.5040808394869801,
+      0.37053326003298515,
+      0.5188495919160513
+    ],
+    "confidence": 0.8176639676094055,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "A1",
+    "bbox": [
+      861.0,
+      1297.0,
+      904.0,
+      1335.0
+    ],
+    "normalized_bbox": [
+      0.47333699835074217,
+      0.5040808394869801,
+      0.49697636063771305,
+      0.5188495919160513
+    ],
+    "confidence": 0.9030957221984863,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "10",
+    "bbox": [
+      1042.0,
+      1295.0,
+      1083.0,
+      1332.0
+    ],
+    "normalized_bbox": [
+      0.5728422210005497,
+      0.5033035367275553,
+      0.5953820780648708,
+      0.5176836377769141
+    ],
+    "confidence": 0.9973765015602112,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ONE ZERO",
+    "bbox": [
+      1264.0,
+      1283.0,
+      1432.0,
+      1330.0
+    ],
+    "normalized_bbox": [
+      0.6948873007146784,
+      0.4986397201710066,
+      0.7872457394172623,
+      0.5169063350174893
+    ],
+    "confidence": 0.9905098676681519,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "THIRD LANGUAGE",
+    "bbox": [
+      154.0,
+      1300.0,
+      409.0,
+      1340.0
+    ],
+    "normalized_bbox": [
+      0.08466190214403518,
+      0.5052467936261174,
+      0.22484881803188564,
+      0.5207928488146133
+    ],
+    "confidence": 0.8767262697219849,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "A1",
+    "bbox": [
+      858.0,
+      1362.0,
+      904.0,
+      1399.0
+    ],
+    "normalized_bbox": [
+      0.47168774051676743,
+      0.529343179168286,
+      0.49697636063771305,
+      0.5437232802176448
+    ],
+    "confidence": 0.9891843795776367,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "10",
+    "bbox": [
+      1042.0,
+      1359.0,
+      1083.0,
+      1394.0
+    ],
+    "normalized_bbox": [
+      0.5728422210005497,
+      0.5281772250291489,
+      0.5953820780648708,
+      0.5417800233190828
+    ],
+    "confidence": 0.9955633878707886,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ONE ZERO",
+    "bbox": [
+      1267.0,
+      1354.0,
+      1432.0,
+      1391.0
+    ],
+    "normalized_bbox": [
+      0.6965365585486532,
+      0.5262339681305869,
+      0.7872457394172623,
+      0.5406140691799456
+    ],
+    "confidence": 0.9531031250953674,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "MATHRMATIGS",
+    "bbox": [
+      151.0,
+      1364.0,
+      368.0,
+      1405.0
+    ],
+    "normalized_bbox": [
+      0.08301264431006047,
+      0.5301204819277109,
+      0.2023089609675646,
+      0.5460551884959192
+    ],
+    "confidence": 0.9290916919708252,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "A1",
+    "bbox": [
+      858.0,
+      1423.0,
+      904.0,
+      1461.0
+    ],
+    "normalized_bbox": [
+      0.47168774051676743,
+      0.5530509133307423,
+      0.49697636063771305,
+      0.5678196657598135
+    ],
+    "confidence": 0.928546667098999,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "10",
+    "bbox": [
+      1042.0,
+      1421.0,
+      1083.0,
+      1458.0
+    ],
+    "normalized_bbox": [
+      0.5728422210005497,
+      0.5522736105713175,
+      0.5953820780648708,
+      0.5666537116206762
+    ],
+    "confidence": 0.9984573125839233,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ONE ZERO",
+    "bbox": [
+      1267.0,
+      1415.0,
+      1432.0,
+      1453.0
+    ],
+    "normalized_bbox": [
+      0.6965365585486532,
+      0.5499417022930432,
+      0.7872457394172623,
+      0.5647104547221142
+    ],
+    "confidence": 0.9684749841690063,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "GRNERALSGIENGS",
+    "bbox": [
+      151.0,
+      1426.0,
+      425.0,
+      1469.0
+    ],
+    "normalized_bbox": [
+      0.08301264431006047,
+      0.5542168674698795,
+      0.2336448598130841,
+      0.5709288767975126
+    ],
+    "confidence": 0.8238990902900696,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "A1",
+    "bbox": [
+      851.0,
+      1480.0,
+      908.0,
+      1532.0
+    ],
+    "normalized_bbox": [
+      0.4678394722374931,
+      0.575204041974349,
+      0.49917537108301263,
+      0.5954139137193937
+    ],
+    "confidence": 0.9951245784759521,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "10",
+    "bbox": [
+      1039.0,
+      1481.0,
+      1087.0,
+      1526.0
+    ],
+    "normalized_bbox": [
+      0.5711929631665751,
+      0.5755926933540614,
+      0.5975810885101704,
+      0.5930820054411193
+    ],
+    "confidence": 0.9973028898239136,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ONE ZERO",
+    "bbox": [
+      1267.0,
+      1479.0,
+      1435.0,
+      1517.0
+    ],
+    "normalized_bbox": [
+      0.6965365585486532,
+      0.5748153905946366,
+      0.7888949972512369,
+      0.5895841430237078
+    ],
+    "confidence": 0.9503746032714844,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "SOCIALSTUDIRS",
+    "bbox": [
+      151.0,
+      1487.0,
+      388.0,
+      1534.0
+    ],
+    "normalized_bbox": [
+      0.08301264431006047,
+      0.5779246016323358,
+      0.21330401319406267,
+      0.5961912164788185
+    ],
+    "confidence": 0.9072942733764648,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "M",
+    "bbox": [
+      858.0,
+      1555.0,
+      904.0,
+      1592.0
+    ],
+    "normalized_bbox": [
+      0.47168774051676743,
+      0.6043528954527788,
+      0.49697636063771305,
+      0.6187329965021375
+    ],
+    "confidence": 0.6602119207382202,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "10",
+    "bbox": [
+      1042.0,
+      1552.0,
+      1083.0,
+      1587.0
+    ],
+    "normalized_bbox": [
+      0.5728422210005497,
+      0.6031869413136417,
+      0.5953820780648708,
+      0.6167897396035756
+    ],
+    "confidence": 0.9932148456573486,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ONE ZERO",
+    "bbox": [
+      1267.0,
+      1546.0,
+      1435.0,
+      1584.0
+    ],
+    "normalized_bbox": [
+      0.6965365585486532,
+      0.6008550330353672,
+      0.7888949972512369,
+      0.6156237854644384
+    ],
+    "confidence": 0.962913453578949,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "SRCOND LANGUAGK",
+    "bbox": [
+      151.0,
+      1554.0,
+      474.0,
+      1598.0
+    ],
+    "normalized_bbox": [
+      0.08301264431006047,
+      0.6039642440730665,
+      0.2605827377680044,
+      0.621064904780412
+    ],
+    "confidence": 0.8233146667480469,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "HINDI",
+    "bbox": [
+      566.0,
+      1557.0,
+      655.0,
+      1597.0
+    ],
+    "normalized_bbox": [
+      0.31115997800989553,
+      0.6051301982122037,
+      0.360087960417812,
+      0.6206762534006995
+    ],
+    "confidence": 0.849288284778595,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "10.0",
+    "bbox": [
+      1305.0,
+      1619.0,
+      1421.0,
+      1678.0
+    ],
+    "normalized_bbox": [
+      0.7174271577789995,
+      0.6292265837543723,
+      0.7811984606926883,
+      0.6521570151574038
+    ],
+    "confidence": 0.9997448921203613,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "Cumulative Crade Point Averoge (CGPA) :",
+    "bbox": [
+      151.0,
+      1637.0,
+      769.0,
+      1686.0
+    ],
+    "normalized_bbox": [
+      0.08301264431006047,
+      0.6362223085891955,
+      0.422759758108851,
+      0.655266226195103
+    ],
+    "confidence": 0.9129118323326111,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "CO-CURRICULAR AREAS:S",
+    "bbox": [
+      151.0,
+      1718.0,
+      528.0,
+      1764.0
+    ],
+    "normalized_bbox": [
+      0.08301264431006047,
+      0.6677030703458997,
+      0.2902693787795492,
+      0.68558103381267
+    ],
+    "confidence": 0.9035224914550781,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "GRADE",
+    "bbox": [
+      747.0,
+      1769.0,
+      855.0,
+      1809.0
+    ],
+    "normalized_bbox": [
+      0.41066520065970313,
+      0.687524290711232,
+      0.47003848268279275,
+      0.7030703458997279
+    ],
+    "confidence": 0.9820517301559448,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "SUBJECT",
+    "bbox": [
+      1101.0,
+      1760.0,
+      1240.0,
+      1807.0
+    ],
+    "normalized_bbox": [
+      0.6052776250687191,
+      0.6840264282938204,
+      0.6816932380428807,
+      0.7022930431403032
+    ],
+    "confidence": 0.9149355292320251,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "GRADE",
+    "bbox": [
+      1494.0,
+      1761.0,
+      1602.0,
+      1801.0
+    ],
+    "normalized_bbox": [
+      0.8213304013194063,
+      0.6844150796735329,
+      0.8807036833424958,
+      0.6999611348620287
+    ],
+    "confidence": 0.9913123846054077,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "SUDIECT",
+    "bbox": [
+      359.0,
+      1776.0,
+      499.0,
+      1823.0
+    ],
+    "normalized_bbox": [
+      0.19736118746564046,
+      0.6902448503692188,
+      0.274326553051127,
+      0.7085114652157015
+    ],
+    "confidence": 0.8385885953903198,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "WORK & COMPUTRR KDUCATION",
+    "bbox": [
+      926.0,
+      1828.0,
+      1410.0,
+      1871.0
+    ],
+    "normalized_bbox": [
+      0.5090709180868609,
+      0.7104547221142635,
+      0.7751511819681144,
+      0.7271667314418966
+    ],
+    "confidence": 0.8710684180259705,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "At",
+    "bbox": [
+      1524.0,
+      1828.0,
+      1570.0,
+      1865.0
+    ],
+    "normalized_bbox": [
+      0.8378229796591534,
+      0.7104547221142635,
+      0.863111599780099,
+      0.7248348231636222
+    ],
+    "confidence": 0.8317167162895203,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "VALUKKDUCATION &LIFESKILLS",
+    "bbox": [
+      151.0,
+      1838.0,
+      639.0,
+      1882.0
+    ],
+    "normalized_bbox": [
+      0.08301264431006047,
+      0.7143412359113875,
+      0.3512919186366135,
+      0.731441896618733
+    ],
+    "confidence": 0.8080759048461914,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "At",
+    "bbox": [
+      788.0,
+      1839.0,
+      834.0,
+      1876.0
+    ],
+    "normalized_bbox": [
+      0.4332050577240242,
+      0.7147298872910999,
+      0.45849367784496975,
+      0.7291099883404586
+    ],
+    "confidence": 0.6680293083190918,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "PHYSICAL & HEALTH RDUGATION",
+    "bbox": [
+      926.0,
+      1876.0,
+      1402.0,
+      1919.0
+    ],
+    "normalized_bbox": [
+      0.5090709180868609,
+      0.7291099883404586,
+      0.7707531610775151,
+      0.7458219976680918
+    ],
+    "confidence": 0.8564453125,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "At",
+    "bbox": [
+      1524.0,
+      1879.0,
+      1570.0,
+      1916.0
+    ],
+    "normalized_bbox": [
+      0.8378229796591534,
+      0.7302759424795958,
+      0.863111599780099,
+      0.7446560435289545
+    ],
+    "confidence": 0.9573327302932739,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "ART&CULTURALHDUCATION",
+    "bbox": [
+      154.0,
+      1887.0,
+      585.0,
+      1930.0
+    ],
+    "normalized_bbox": [
+      0.08466190214403518,
+      0.7333851535172949,
+      0.32160527762506874,
+      0.7500971628449281
+    ],
+    "confidence": 0.858476459980011,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "Ab",
+    "bbox": [
+      788.0,
+      1890.0,
+      834.0,
+      1927.0
+    ],
+    "normalized_bbox": [
+      0.4332050577240242,
+      0.7345511076564322,
+      0.45849367784496975,
+      0.7489312087057909
+    ],
+    "confidence": 0.5837283134460449,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "Marks of ldentificatlun . A MOLE ON THE NOBE",
+    "bbox": [
+      154.0,
+      1970.0,
+      912.0,
+      2018.0
+    ],
+    "normalized_bbox": [
+      0.08466190214403518,
+      0.7656432180334241,
+      0.5013743815283123,
+      0.7842984842596191
+    ],
+    "confidence": 0.7322520613670349,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "2A MOLE ON THE RIGHT GIDE CHEOT",
+    "bbox": [
+      511.0,
+      2018.0,
+      1116.0,
+      2069.0
+    ],
+    "normalized_bbox": [
+      0.28092358438702586,
+      0.7842984842596191,
+      0.6135239142385926,
+      0.8041197046249514
+    ],
+    "confidence": 0.8691405653953552,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "Head-Master",
+    "bbox": [
+      170.0,
+      2130.0,
+      464.0,
+      2188.0
+    ],
+    "normalized_bbox": [
+      0.09345794392523364,
+      0.8278274387874077,
+      0.25508521165475534,
+      0.8503692188107268
+    ],
+    "confidence": 0.9908828735351562,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "NARAYANA SCHOOL",
+    "bbox": [
+      135.0,
+      2173.0,
+      493.0,
+      2225.0
+    ],
+    "normalized_bbox": [
+      0.07421660252886202,
+      0.8445394481150408,
+      0.27102803738317754,
+      0.8647493198600855
+    ],
+    "confidence": 0.7857593894004822,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "S. Pymc.h.",
+    "bbox": [
+      1139.0,
+      2173.0,
+      1403.0,
+      2238.0
+    ],
+    "normalized_bbox": [
+      0.6261682242990654,
+      0.8445394481150408,
+      0.7713029136888401,
+      0.8698017877963466
+    ],
+    "confidence": 0.6469658017158508,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "Hetirrurto Rn Jatp, Kuranally",
+    "bbox": [
+      116.0,
+      2205.0,
+      496.0,
+      2260.0
+    ],
+    "normalized_bbox": [
+      0.06377130291368883,
+      0.8569762922658375,
+      0.2726772952171523,
+      0.8783521181500195
+    ],
+    "confidence": 0.5486681461334229,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "OPCRDTARY",
+    "bbox": [
+      1153.0,
+      2230.0,
+      1348.0,
+      2273.0
+    ],
+    "normalized_bbox": [
+      0.6338647608576141,
+      0.8666925767586475,
+      0.7410665200659703,
+      0.8834045860862806
+    ],
+    "confidence": 0.7241177558898926,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "160300 072",
+    "bbox": [
+      298.0,
+      2270.0,
+      439.0,
+      2300.0
+    ],
+    "normalized_bbox": [
+      0.16382627817482134,
+      0.8822386319471434,
+      0.24134139637163277,
+      0.8938981733385154
+    ],
+    "confidence": 0.5364376306533813,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "BARD OP GENDARY LDUCATOR",
+    "bbox": [
+      1023.0,
+      2265.0,
+      1538.0,
+      2305.0
+    ],
+    "normalized_bbox": [
+      0.5623969213853766,
+      0.8802953750485815,
+      0.845519516217702,
+      0.8958414302370773
+    ],
+    "confidence": 0.6873143315315247,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "Date of Iss110 : 21/06/2021",
+    "bbox": [
+      119.0,
+      2308.0,
+      493.0,
+      2345.0
+    ],
+    "normalized_bbox": [
+      0.06542056074766354,
+      0.8970073843762145,
+      0.27102803738317754,
+      0.9113874854255732
+    ],
+    "confidence": 0.9077768921852112,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "IANSANA CTAIC.HYDERAAAD",
+    "bbox": [
+      1050.0,
+      2294.0,
+      1516.0,
+      2337.0
+    ],
+    "normalized_bbox": [
+      0.577240241891149,
+      0.891566265060241,
+      0.8334249587685542,
+      0.9082782743878741
+    ],
+    "confidence": 0.7283327579498291,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "h srtns na yn a",
+    "bbox": [
+      373.0,
+      2353.0,
+      885.0,
+      2377.0
+    ],
+    "normalized_bbox": [
+      0.20505772402418912,
+      0.9144966964632725,
+      0.48653106102253985,
+      0.92382432957637
+    ],
+    "confidence": 0.5562381148338318,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  },
+  {
+    "document_id": "DOC_7247425D2AF3",
+    "page": 1,
+    "text": "2021",
+    "bbox": [
+      891.0,
+      2388.0,
+      966.0,
+      2423.0
+    ],
+    "normalized_bbox": [
+      0.48982957669048927,
+      0.9280994947532064,
+      0.5310610225398571,
+      0.9417022930431403
+    ],
+    "confidence": 0.9902194142341614,
+    "engine": "paddleocr",
+    "block_id": null,
+    "line_id": null,
+    "word_id": null
+  }
+]
